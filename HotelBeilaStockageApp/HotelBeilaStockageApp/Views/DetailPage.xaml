@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HotelBeilaStockageApp.Views.DetailPage"
+             xmlns:viewModelBase="clr-namespace:HotelBeilaStockageApp.Services.General;assembly=HotelBeilaStockageApp"
+             viewModelBase:ViewModelLocalizator.AutoWireViewModel="True"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Label Text="{Binding Name}" 
+                   FontSize="30"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding Area}"
+                   FontSize="20"
+                   HorizontalOptions="Center"/>
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         Margin="0,0,0,60">
+                <Label Text="Supplier: "
+                   FontSize="20"/>
+                <Label Text="{Binding Supplier}"
+                   FontSize="20"/>
+            </StackLayout>
+
+            <Label Text="Please fill in the remaining amount"
+                   HorizontalOptions="Center"
+                   FontSize="20"/>
+            <Entry Placeholder="{Binding Amount, Mode=TwoWay}"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="30"
+                   WidthRequest="100"
+                   HorizontalTextAlignment="Center"
+                   />
+            <Label Text="{Binding Description}"
+                   HorizontalOptions="Center"
+                   FontSize="20"
+                   Margin="0,0,0,60"/>
+            <Button Text="Send"
+                    HorizontalOptions="Center"
+                    WidthRequest="350"
+                    Font="25"
+                    Command="{Binding SendCommand}"/>
+            <Label Text="{Binding Message, Mode=TwoWay}"
+                   HorizontalTextAlignment="Center"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

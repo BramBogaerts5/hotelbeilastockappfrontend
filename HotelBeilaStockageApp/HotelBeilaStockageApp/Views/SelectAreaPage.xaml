@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HotelBeilaStockageApp.Views.SelectAreaPage"
+             xmlns:viewModelBase="clr-namespace:HotelBeilaStockageApp.Services.General;assembly=HotelBeilaStockageApp"
+             viewModelBase:ViewModelLocalizator.AutoWireViewModel="True"
+             BackgroundColor="White">
+    <StackLayout>
+        <Button Text="Bar"
+                    WidthRequest="350"
+                    HorizontalOptions="Center"
+                    HeightRequest="100"
+                    VerticalOptions="CenterAndExpand"
+                    FontSize="35"
+                    Margin="0,30,0,0"
+                    Command="{Binding GoToBarCommand}"
+                    />
+        <Button Text="Breakfast"
+                    WidthRequest="350"
+                    HorizontalOptions="Center"
+                    HeightRequest="100"
+                    VerticalOptions="CenterAndExpand"
+                    FontSize="35"
+                    Command="{Binding GoToBreakfastCommand}"
+                    />
+        <Button Text="Cleaning"
+                    WidthRequest="350"
+                    HorizontalOptions="Center"
+                    HeightRequest="100"
+                    VerticalOptions="CenterAndExpand"
+                    FontSize="35"
+                    Command="{Binding GoToCleaningCommand}"
+                />
+        <Button Text="Other"
+                    WidthRequest="350"
+                    HorizontalOptions="Center"
+                    HeightRequest="100"
+                    VerticalOptions="CenterAndExpand"
+                    FontSize="35"
+                    Margin="0,0,0,30"
+                    Command="{Binding GoToOtherCommand}"
+                    />
+    </StackLayout>
+</ContentPage>

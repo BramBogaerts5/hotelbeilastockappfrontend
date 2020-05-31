@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HotelBeilaStockageApp.Views.SelectProductPage"
+             xmlns:viewModelBase="clr-namespace:HotelBeilaStockageApp.Services.General;assembly=HotelBeilaStockageApp"
+             viewModelBase:ViewModelLocalizator.AutoWireViewModel="True"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Select your product"
+                   FontSize="20"
+                   BackgroundColor="Gray"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center"/>
+            <ListView
+                ItemsSource="{Binding Items}"
+                HasUnevenRows="False"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                SeparatorVisibility="None"
+                BackgroundColor="White"
+                SelectedItem="{Binding SelectedProduct}"
+                CachingStrategy="RecycleElement"           
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowSpacing="10" Margin="10,0,0,0" VerticalOptions="Center">
+                                <Label Text="{Binding Name}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
